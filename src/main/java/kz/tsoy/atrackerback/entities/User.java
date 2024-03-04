@@ -1,9 +1,16 @@
 package kz.tsoy.atrackerback.entities;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
 import java.util.Set;
 
-@Entity
+@jakarta.persistence.Entity
+@Getter
+@Setter
+@RequiredArgsConstructor
 @Table(name = "users")
 public class User {
     @Id
@@ -23,6 +30,4 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<Role> roles;
-
-    // геттеры, сеттеры и другие методы
 }

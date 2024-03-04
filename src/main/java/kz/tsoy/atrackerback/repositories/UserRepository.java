@@ -1,2 +1,12 @@
-package kz.tsoy.atrackerback.repositories;public interface UserRepository {
+package kz.tsoy.atrackerback.repositories;
+
+import kz.tsoy.atrackerback.entities.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface UserRepository extends JpaRepository<User,Long> {
+    Optional<User> findByUsername(String username);
 }
